@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const { PORT } = require('./config/serverConfig');
 
 //const TicketController = require('./controllers/ticket-controller');
-//const EmailService = require('./services/email-service');
+const EmailService = require('./services/email-service');
 
 //const jobs = require('./utils/job');
 //const { subscribeMessage, createChannel } = require('./utils/messageQueue');
