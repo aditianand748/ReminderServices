@@ -5,8 +5,9 @@ const { EMAIL_ID, EMAIL_PASSWORD } = require('./serverConfig');
 const sender = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-               user: EMAIL_ID,
-        password: EMAIL_PASSWORD
+        user: process.env.EMAIL_ID,
+        pass: process.env.EMAIL_PASSWORD
+
     }
 
 });

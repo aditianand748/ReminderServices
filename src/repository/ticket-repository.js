@@ -29,12 +29,26 @@ class TicketRepository {
                 notificationTime: {
                     [Op.lte]: new Date()
                 }
-            }
+            },
+            raw: true
         });
         return tickets;
         } catch (error) {
             throw error;
         }
+    }
+
+    async update(ticketId, data) {
+                try {
+        const ticket = await NotificationTicket.findByPk(ticketId);
+        if(data.status)
+        ticket.status = data.status;
+        await ticket.save();
+        return ticket;
+        } catch (error) {
+            throw error;
+        }
+
     }
 }
 
